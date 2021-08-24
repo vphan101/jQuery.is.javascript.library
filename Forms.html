@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.0.1.js"></script>
+    <script type="text/javascript">
+    //return false doesn't allow theh page to refresh
+    //.submit works in 2 ways
+    //.serialize preps forms being handled by a computer
+        $(document).ready(function(){
+            $("#form1").submit(function(){
+                console.log($(this).serialize());
+                return false
+            });
+
+            $('btn').click(function(){
+                $('#form1').submit();
+            })
+        });
+
+
+    </script>
+
+</head>
+    <form id='form1' action="process.php" method='post'>
+        First name<input type='text' name='first_name' >
+        Last name<input type='text' name='last_name'>
+        Email<input type='text' name='email'>
+        <input type='submit' value='submit!'>
+    </form>
+
+    <button class='btn'>click me to use .submit() differently!</button>
+
+
+<body>
+    
+</body>
+</html>
